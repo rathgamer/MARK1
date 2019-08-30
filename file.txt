@@ -1,0 +1,8 @@
+OS should keep track of various processes.
+OS must allocate and deallocate various resources for each active process. OS must protect the data and physical resources of each process.
+Process are unaware of each other. Process is indirectly aware of each other. Process is directly aware of each other.
+1.Kundan
+2.Santhosh
+3.Sanjay
+12345Rath
+@gmail.com
