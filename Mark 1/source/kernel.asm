@@ -158,7 +158,7 @@ option_screen:
 
 	jmp option_screen		
 
-	os_init_msg		db 'HELLO I'M MARK 1', 0
+	os_init_msg		db 'HELLO IM MARK 1', 0
 	os_version_msg		db 'Version ', MARK_VER, 0
 
 	dialog_string_1		db ' ', 0
