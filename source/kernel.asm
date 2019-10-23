@@ -1,7 +1,7 @@
 	BITS 16
 
 	%DEFINE MARK_VER '1'	
-	%DEFINE MIKEOS_API_VER 17	; API version for programs to check
+	%DEFINE MARK_API_VER 17	
 
 	disk_buffer	equ	24576
 
