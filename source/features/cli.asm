@@ -963,7 +963,7 @@ exit:
 	exists_msg		db 'Target file already exists!', 13, 10, 0
 	finished_msg		db '>>> Program finished, press any key to continue...', 0
 
-	version_msg		db 'MikeOS ', MARK_VER, 13, 10, 0
+	version_msg		db 'MikeOS ', MIKEOS_VER, 13, 10, 0
 
 	exit_string		db 'EXIT', 0
 	help_string		db 'HELP', 0
