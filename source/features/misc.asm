@@ -10,7 +10,7 @@
 ; IN: Nothing; OUT: AL = API version number
 
 os_get_api_version:
-	mov al, MIKEOS_API_VER
+	mov al, MARK_API_VER
 	ret
 
 
