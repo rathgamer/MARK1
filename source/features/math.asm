@@ -1,14 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; MATH ROUTINES
-; ==================================================================
-
-; ------------------------------------------------------------------
-; os_seed_random -- Seed the random number generator based on clock
-; IN: Nothing; OUT: Nothing (registers preserved)
-
 os_seed_random:
 	push bx
 	push ax

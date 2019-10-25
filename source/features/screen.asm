@@ -1,14 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; SCREEN HANDLING SYSTEM CALLS
-; ==================================================================
-
-; ------------------------------------------------------------------
-; os_print_string -- Displays text
-; IN: SI = message location (zero-terminated string)
-; OUT: Nothing (registers preserved)
 
 os_print_string:
 	pusha

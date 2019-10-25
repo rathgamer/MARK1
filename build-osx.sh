@@ -87,16 +87,16 @@ done
 echo "[okay] assembled all programs"
 cd ..
 
-cp disk_images/mikeos.flp disk_images/mikeos.dmg
+cp disk_images/mark1.flp disk_images/mark1.dmg
 echo "[okay] copied floppy image"
 
-dd conv=notrunc if=source/bootload/bootload.bin of=disk_images/mikeos.dmg || exit 1
+dd conv=notrunc if=source/bootload/bootload.bin of=disk_images/mark1.dmg || exit 1
 echo "[okay] added bootloader to image"
 
 tmp_file=$(mktemp -d /tmp/$(basename $0).XXXXXX)
 [ $? -ne 0 ] && echo "[halt] error creating a temp file" >&2 && exit 1
 
-dev=$(echo -n $(hdid -nobrowse -nomount disk_images/mikeos.dmg))
+dev=$(echo -n $(hdid -nobrowse -nomount disk_images/mark1.dmg))
 [ $? -ne 0 ] && echo "[halt] could not create disk from image" >&2 && exit 1
 
 mount -t msdos "$dev" "$tmp_file"
@@ -111,7 +111,7 @@ hdiutil detach "$dev"
 rm -rf "$tmp_file"
 echo "[okay] unmounted floppy image"
 
-rm -f disk_images/mikeos.iso
-mkisofs -quiet -V 'MIKEOS' -input-charset iso8859-1 -o disk_images/mikeos.iso -b mikeos.dmg disk_images/ || exit 1
-echo "[okay] converted floppy to ISO-8859-1 image"
+rm -f disk_images/mark1.iso
+mkisofs -quiet -V 'MARK1' -input-charset iso8859-1 -o disk_images/mark1.iso -b mark1.dmg disk_images/ || exit 1
+echo "[okay] ISO image"
 echo "[done] build completed"

@@ -1,14 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; FAT12 FLOPPY DISK ROUTINES
-; ==================================================================
-
-; ------------------------------------------------------------------
-; os_get_file_list -- Generate comma-separated string of files on floppy
-; IN/OUT: AX = location to store zero-terminated filename string
-
 os_get_file_list:
 	pusha
 

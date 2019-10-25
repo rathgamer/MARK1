@@ -1,13 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; BASIC CODE INTERPRETER (4.5)
-; ==================================================================
-
-; ------------------------------------------------------------------
-; Token types
-
 %DEFINE VARIABLE 1
 %DEFINE STRING_VAR 2
 %DEFINE NUMBER 3
@@ -18,7 +8,6 @@
 %DEFINE LABEL 8
 
 
-; ------------------------------------------------------------------
 ; The BASIC interpreter execution starts here -- a parameter string
 ; is passed in SI and copied into the first string, unless SI = 0
 
@@ -271,7 +260,7 @@ mainloop:
 	jmp error
 
 
-; ------------------------------------------------------------------
+
 ; CLEAR RAM
 
 clear_ram:
@@ -311,7 +300,7 @@ clear_ram:
 	ret
 
 
-; ------------------------------------------------------------------
+
 ; ASSIGNMENT
 
 assign:
@@ -4344,7 +4333,3 @@ vars_loc:
 	gosub_points		times 10 dw 0	; Points in code to RETURN to
 
 	string_vars		times 1024 db 0	; 8 * 128 byte strings
-
-
-; ------------------------------------------------------------------
-

@@ -1,14 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; KEYBOARD HANDLING ROUTINES
-; ==================================================================
-
-; ------------------------------------------------------------------
-; os_wait_for_key -- Waits for keypress and returns key
-; IN: Nothing; OUT: AX = key pressed, other regs preserved
-
 os_wait_for_key:
 	mov ah, 0x11
 	int 0x16

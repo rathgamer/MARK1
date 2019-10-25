@@ -1,14 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; PC SPEAKER SOUND ROUTINES
-; ==================================================================
-
-; ------------------------------------------------------------------
-; os_speaker_tone -- Generate PC speaker tone (call os_speaker_off to turn off)
-; IN: AX = note frequency; OUT: Nothing (registers preserved)
-
 os_speaker_tone:
 	pusha
 

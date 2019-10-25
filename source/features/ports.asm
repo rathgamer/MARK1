@@ -1,14 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; PORT INPUT AND OUTPUT ROUTINES
-; ==================================================================
-
-; ------------------------------------------------------------------
-; os_port_byte_out -- Send byte to a port
-; IN: DX = port address, AL = byte to send
-
 os_port_byte_out:
 	pusha
 

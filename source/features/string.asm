@@ -1,15 +1,3 @@
-; ==================================================================
-; MikeOS -- The Mike Operating System kernel
-; Copyright (C) 2006 - 2019 MikeOS Developers -- see doc/LICENSE.TXT
-;
-; STRING MANIPULATION ROUTINES
-; ==================================================================
-
-; ------------------------------------------------------------------
-; os_string_length -- Return length of a string
-; IN: AX = string location
-; OUT AX = length (other regs preserved)
-
 os_string_length:
 	pusha
 

@@ -6,7 +6,7 @@
 # Only the root user can mount the floppy disk image as a virtual
 # drive (loopback mounting), in order to copy across the files
 
-# (If you need to blank the floppy image: 'mkdosfs disk_images/mikeos.flp')
+# (If you need to blank the floppy image: 'mkdosfs disk_images/mark.flp')
 
 
 if test "`whoami`" != "root" ; then
@@ -16,26 +16,26 @@ if test "`whoami`" != "root" ; then
 fi
 
 
-if [ ! -e disk_images/mikeos.flp ]
+if [ ! -e disk_images/mark1.flp ]
 then
-	echo ">>> Creating new MikeOS floppy image..."
-	mkdosfs -C disk_images/mikeos.flp 1440 || exit
+	echo ">>> Creating new Mark1"
+	mkdosfs -C disk_images/mark1.flp 1440 || exit
 fi
 
 
-echo ">>> Assembling bootloader..."
+echo "Building bootloader..."
 
 nasm -O0 -w+orphan-labels -f bin -o source/bootload/bootload.bin source/bootload/bootload.asm || exit
 
 
-echo ">>> Assembling MikeOS kernel..."
+echo "Building Mark1 kernel..."
 
 cd source
 nasm -O0 -w+orphan-labels -f bin -o kernel.bin kernel.asm || exit
 cd ..
 
 
-echo ">>> Assembling programs..."
+echo "Building programs"
 
 cd programs
 
@@ -47,32 +47,32 @@ done
 cd ..
 
 
-echo ">>> Adding bootloader to floppy image..."
+echo "Adding bootloader to iso file"
 
-dd status=noxfer conv=notrunc if=source/bootload/bootload.bin of=disk_images/mikeos.flp || exit
+dd status=noxfer conv=notrunc if=source/bootload/bootload.bin of=disk_images/mark1.flp || exit
 
 
-echo ">>> Copying MikeOS kernel and programs..."
+echo "Copying Mark 1 kernel and programs"
 
 rm -rf tmp-loop
 
-mkdir tmp-loop && mount -o loop -t vfat disk_images/mikeos.flp tmp-loop && cp source/kernel.bin tmp-loop/
+mkdir tmp-loop && mount -o loop -t vfat disk_images/mark1.flp tmp-loop && cp source/kernel.bin tmp-loop/
 
 cp programs/*.bin programs/*.bas programs/sample.pcx tmp-loop
 
 sleep 0.2
 
-echo ">>> Unmounting loopback floppy..."
+echo "Unmounting temp files"
 
 umount tmp-loop || exit
 
 rm -rf tmp-loop
 
 
-echo ">>> Creating CD-ROM ISO image..."
+echo "Creating ISO image"
 
-rm -f disk_images/mikeos.iso
-mkisofs -quiet -V 'MIKEOS' -input-charset iso8859-1 -o disk_images/mikeos.iso -b mikeos.flp disk_images/ || exit
+rm -f disk_images/mark1.iso
+mkisofs -quiet -V 'MARK1' -input-charset iso8859-1 -o disk_images/mark1.iso -b mark1.flp disk_images/ || exit
 
-echo '>>> Done!'
+echo 'Exit!'
 

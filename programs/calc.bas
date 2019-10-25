@@ -1,22 +1,13 @@
-rem Calculator Application (CALC.BAS)
-rem A simple calculator application.
-rem Version 2.1.0
-rem Made by Joshua Beck
-rem Released under the GNU General Public Licence version 3
-rem Send any bugs, ideas or comments to zerokelvinkeyboard@gmail.com
-
-rem Uses the MB++ Library version 4.0
-rem Avaliable at code.google.com/p/mikebasic-applications
+rem Calculator Application 
+rem Made by Mano Vikram
 INCLUDE "MBPP.BAS"
 
 START:
   CLS
-  REM MB++ initialise function
   GOSUB STARTPRG
-  REM set the text colour and highlight (for the menu)
+  
   C = 3
   H = 11
-  REM set the box colour
   T = 2
   MOVE 30 13
   PRINT "Calculating..."
@@ -25,36 +16,12 @@ GOTO MAIN
 MAIN:
   REM main menu
   $5 = "Calculator"
-  $6 = "Simple Calculations|Advanced Maths|Change Colour Scheme|About|Exit"
+  $6 = "Simple Calculations|Advanced Calculations|Exit"
   GOSUB MENUBOX
   IF V = 1 THEN GOSUB BASEMATH
   IF V = 2 THEN GOSUB ADVMATH
-  IF V = 3 THEN GOSUB COLCHANGE
-  IF V = 4 THEN GOSUB ABOUT
-  IF V = 5 THEN GOSUB ENDPROG
+  IF V = 3 THEN GOSUB ENDPROG
 GOTO MAIN
-
-COLCHANGE:
-  $5 = "Change Colour Scheme"
-  $6 = "Input a new colour for outline, 1-255"
-  $7 = "Input a new text colour, 1-15"
-  V = 0
-  GOSUB DINBOX
-  $8 = "Invalid colour"
-  IF A < 1 THEN GOTO ERRBOX
-  IF A > 255 THEN GOTO ERRBOX
-  IF B < 1 THEN GOTO ERRBOX
-  IF B > 15 THEN GOTO ERRBOX
-  T = A
-  C = B
-  $6 = "Input a new highlight colour, 1-15"
-  V = 0
-  GOSUB INPBOX
-  $8 = "Invalid colour"
-  IF V < 1 THEN GOTO ERRBOX
-  IF V > 15 THEN GOTO ERRBOX
-  H = V
-RETURN
   
 BASEMATH:
   REM start the menu loop
