@@ -947,7 +947,7 @@ exit:
 
 	prompt			db '> ', 0
 
-	help_text		db 'Commands: DIR, LS, COPY, REN, DEL, CAT, SIZE, CLS, HELP, TIME, DATE, VER, EXIT', 13, 10, 0
+	help_text		db 'Commands: LS, DEL, SIZE, CLS, HELP, TIME, DATE, VER, EXIT', 13, 10, 0
 	invalid_msg		db 'No such command or program', 13, 10, 0
 	nofilename_msg		db 'No filename or not enough filenames', 13, 10, 0
 	notfound_msg		db 'File not found', 13, 10, 0
@@ -955,7 +955,7 @@ exit:
 	exists_msg		db 'Target file already exists!', 13, 10, 0
 	finished_msg		db '>>> Program finished, press any key to continue...', 0
 
-	version_msg		db 'MikeOS ', MARK_VER, 13, 10, 0
+	version_msg		db 'MARK 1 VERSION: ', MARK_VER, 13, 10, 0
 
 	exit_string		db 'EXIT', 0
 	help_string		db 'HELP', 0
